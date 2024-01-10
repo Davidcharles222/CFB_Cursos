@@ -1,6 +1,5 @@
 //Somente um retorno por vez
 
-/*
 function canal(){//pronta para ser executada --> retorna o valor 20
     let n1 = 10
     let n2 = 2
@@ -9,7 +8,6 @@ function canal(){//pronta para ser executada --> retorna o valor 20
 }
 let num = canal()//Let num recebe o valor da função canal que é 20
 console.log(num)//utilizamos a camada nesta forma com console
-*/
 
 //--------------------------------------------------------------------
 

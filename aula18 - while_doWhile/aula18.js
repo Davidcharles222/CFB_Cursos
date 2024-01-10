@@ -11,6 +11,7 @@ while(n<10){//Neste teste lógico se for falso, ele não entrará no loop
 }
 console.log('Fim do programa')
 
+//---------------------------------------
 
 let n = 10
 do{//Neste teste lógico sé for falso, ele irá executar o comando pelo menos uma vez e sair do loop

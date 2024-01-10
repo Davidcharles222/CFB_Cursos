@@ -1,7 +1,6 @@
 //break ele encerra e sai do loop imediato
 //continue pula para próxima interação do loop continuando dentro do loop
 
-/*
 let n = 0
 let max = 1000
 
@@ -13,7 +12,8 @@ while(n<max){//enquanto 0 for menor que 1000
     n++//n encrementa 1
 }
 console.log('Fim do programa')
-*/
+
+//---------------------------------------
 
 let n = 0
 let max = 1000

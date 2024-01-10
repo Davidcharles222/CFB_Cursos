@@ -1,6 +1,5 @@
 //Função é um bloco de comando que eu posso executar em um momento oportuno
 
-/*
 function nome(){//->Declaração da função
     console.log('CFB Cursos')
 }
@@ -8,6 +7,7 @@ nome()//->Chamada da função
 nome()//->Posso chamar quantas vezes necessário
 nome()//->Posso chamar quantas vezes necessário
 
+//---------------------------------------
 
 function soma2_10(){
     let n1 = 2
@@ -18,7 +18,8 @@ function soma2_10(){
 for(let i = 0; i < 10; i++){
     soma2_10()//chamei a function dentro do loop criado
 }
-*/
+
+//---------------------------------------
 
 function mudarTexto(){//chamada no html
     let d1 = document.getElementById('d1')
