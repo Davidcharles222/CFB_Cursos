@@ -76,4 +76,8 @@ calc_aba.addEventListener('click',(evt)=>{
     }else{
         evt.target.setAttribute('src','seta_right.svg')
     }
+    
 })
+
+
+
