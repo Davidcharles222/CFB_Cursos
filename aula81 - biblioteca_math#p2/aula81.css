@@ -17,4 +17,7 @@
 .olho{
     width: 200px;
     height: 200px;
+    transform-origin: center center;
 }
+
+
