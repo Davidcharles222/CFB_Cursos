@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 87</title>
+    <link rel="stylesheet" href="aula87.css">
+</head>
+<body>
+    <h1>CFB Cursos</h1>
+    <form onsubmit="event.preventDefault()"><!--assim conseguimos utilizar o direcinamento dentro do form sem problema nenhum -->
+        <input type="url" name="url" id="url" placeholder="https://cfbcursos.com.br" pattern="https://.*" size="30" required>
+        <button id="btn_url">Ir</button>
+    </form>
+    <script src="aula87.js"></script>
+</body>
+</html>
