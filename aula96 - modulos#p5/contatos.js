@@ -1,4 +1,5 @@
 //importamos a array contatos de bancoContatos-> neste caso vazia
+
 import { contatos } from "./bancoContatos.js";
 
 //criando um objeto literal contato
@@ -42,4 +43,6 @@ let contato={
     }
 }
 
+
+export default contato
 
