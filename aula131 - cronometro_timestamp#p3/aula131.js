@@ -1,4 +1,5 @@
 //CRONÔMETRO
+import {Cxmsg} from './cxmsg.js'
 const timer=document.getElementById('timer')
 const btn_iniciar=document.getElementById('btn_iniciar')
 const btn_parar=document.getElementById('btn_parar')
@@ -37,4 +38,5 @@ btn_zerar.addEventListener('click',(evt)=>{
     tmpini=Date.now()//pegando timestamp de agora
     timer.innerHTML='00:00:00'//setando valor 00
     clearInterval(intervalo)//para para a contagem
+    Cxmsg.mostrar('Cronometro','O Cronometro foi zerado')
 })

@@ -27,6 +27,7 @@ const move=()=>{
 
 btn_parar.addEventListener('click',()=>{
     clearTimeout(anima)
+    Cxmsg()
 })
 
 btn_play.addEventListener('click',(evt)=>{
