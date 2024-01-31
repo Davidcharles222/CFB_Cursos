@@ -4,18 +4,24 @@ class Login{
     static nomelogado=null;
     static acessologado=null;
     static estilocss=null;
+    static callback_ok=null;
+    static callback_naook=null;
     static config={
         cor:'048',
         img:'./logo.png'
     };
 
     static endpoint='https://371704cc-1f42-402a-bd42-3f1864b7f798-00-4bt7ox3wijnv.kirk.replit.dev/'
-    //https://371704cc-1f42-402a-bd42-3f1864b7f798-00-4bt7ox3wijnv.kirk.replit.dev/?matricula=123&senha=321
+    
 
-    static login=(config=null)=>{
+    static login=(callback_ok,callback_naook,config=null)=>{
         if(config!=null){
             this.config=config;
         }
+
+        this.callback_ok=()=>{callback_ok()};
+        this.callback_naook=()=>{callback_naook()};
+
         this.estilocss=
         ".fundoLogin{display:flex; justify-content:center; align-items:center; width:100%; height: 100vh; position:absolute; top:0; left:0; background-color:rgba(0,0,0,0.75); box-sizing:border-box;}"+
         ".baseLogin{display: flex; justify-content: center; align-items: stretch; width: 50%; box-sizing: inherit;}"+
@@ -99,12 +105,9 @@ class Login{
         btn_login.setAttribute('id','btn_login');
         btn_login.innerHTML='Login';
         btn_login.addEventListener('click',(evt)=>{
-            if(this.verificaLogin()){
-                this.fechar();
-            }else{
-                
-            };
+            this.verificaLogin();
         });
+
         botoesLogin.appendChild(btn_login);
 
         const btn_cancelar=document.createElement('button');
@@ -128,30 +131,32 @@ class Login{
         logoLogin.appendChild(imgLogo);
 
 //-----------------------------------------------------
-
-        // fetch(this.endpoint)
-        // .then(res=>res.json())
-        // .then(res=>{
-        //     if(res){
-        //         this.logado=true;
-        //         this.matlogado=mat;
-        //         this.nomelogado=res.nome;
-        //         this.acessologado=res.acesso;
-        //         console.log(res)
-        //     }else{
-        //         console.log('Usuário não encontrado');
-        //     }
-        // })
     }
 
     static verificaLogin=()=>{
         const mat=document.getElementById('f_username').value;
         const pas=document.getElementById('f_senha').value;
-        if(mat=='123' && pas=='321'){
-            return true;
-        }else{
-            return false;
-        };
+
+        const endpoint = `https://371704cc-1f42-402a-bd42-3f1864b7f798-00-4bt7ox3wijnv.kirk.replit.dev/?matricula=${mat}&senha=${pas}`;
+
+        fetch(endpoint)
+        .then(res=>res.json())
+        .then(res=>{
+            if(res){
+                this.logado=true;
+                this.matlogado=mat;
+                this.nomelogado=res.nome;
+                this.acessologado=res.acesso;
+                this.callback_ok();
+                this.fechar();
+            }else{
+                this.logado=false;
+                this.matlogado=null;
+                this.nomelogado=null;
+                this.acessologado=null;
+                this.callback_naook();
+            };
+        });
     };
 
     static fechar=()=>{
